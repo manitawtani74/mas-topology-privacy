@@ -1,0 +1,34 @@
+# Validation config for the leakage detector.
+# 4 agents on a COMPLETE graph with consolidate_channels=true => a single shared
+# blackboard holding all 4 agents. This maximizes exposure so the run contains a
+# rich mix to check the judge against: genuine leaks, legitimate soft-coordination
+# sharing (should NOT flag), and second-order relaying of third parties' schedules.
+simulation:
+  max_iterations: 1
+  max_planning_rounds: 1
+  max_conversation_steps: 3
+  seed: 436858            # first published Appendix B.2 seed
+  tags:
+    - detector_validation
+
+environment:
+  name: MeetingSchedulingEnvironment
+  assignment_filling: false
+  num_meetings: 5
+  timeline_length: 12
+  min_participants: 2
+  max_participants: 3
+  soft_meeting_ratio: 0.6
+
+communication_network:
+  topology: complete
+  num_agents: 4
+  consolidate_channels: true
+
+llm:
+  provider: "openai"
+  openai:
+    model: "gpt-4.1-mini-2025-04-14"
+    params:
+      max_tokens: 1024
+      temperature: 0.7

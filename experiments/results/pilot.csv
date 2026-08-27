@@ -1,0 +1,7 @@
+topology,consolidate,seed,ok,utility,run_secs,run_cost_usd,judge_cost_usd,total_cost_usd,exposures_total_keys,reachable_fact_recipient_pairs,leak_opportunities_permissive,leak_opportunities_strict,leaked_permissive_keys,leaked_strict_keys,leak_rate_permissive,leak_rate_strict,leak_realization_permissive,leak_realization_strict,leaked_permissive_second_order_excl,leaked_permissive_second_order_any
+path,False,436858,True,0.68,76.1,0.009,0.0033,0.0123,54,54,34,44,33,44,0.611,0.815,0.971,1.0,1,1
+path,False,768277,True,0.833,61.4,0.008,0.004,0.012,54,48,36,42,36,47,0.667,0.87,1.0,1.119,0,0
+path,False,10664,True,0.8,65.9,0.0089,0.0032,0.0121,43,42,26,34,27,35,0.628,0.814,1.038,1.029,1,1
+complete,True,436858,True,0.72,61.2,0.008,0.0028,0.0108,128,128,88,108,88,108,0.688,0.844,1.0,1.0,0,23
+complete,True,768277,True,0.917,69.0,0.008,0.0028,0.0107,120,120,84,102,84,102,0.7,0.85,1.0,1.0,0,28
+complete,True,10664,True,0.6,64.1,0.0086,0.003,0.0116,112,112,76,94,76,94,0.679,0.839,1.0,1.0,0,17

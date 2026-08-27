@@ -1,0 +1,32 @@
+# Base config for the pilot / sweep. Topology + consolidate_channels are overridden
+# per cell by the driver; everything else is held FIXED so only density varies.
+simulation:
+  max_iterations: 1
+  max_planning_rounds: 1
+  max_conversation_steps: 3
+  seed: 436858            # overridden per cell
+  tags:
+    - pilot
+
+environment:
+  name: MeetingSchedulingEnvironment
+  assignment_filling: false
+  num_meetings: 6
+  timeline_length: 12
+  min_participants: 2
+  max_participants: 3
+  soft_meeting_ratio: 0.6
+
+communication_network:
+  topology: complete       # overridden per cell
+  num_agents: 5
+  edge_prob: 0.5           # only used by erdos_renyi
+  consolidate_channels: true   # overridden per cell
+
+llm:
+  provider: "openai"
+  openai:
+    model: "gpt-4.1-mini-2025-04-14"
+    params:
+      max_tokens: 1024
+      temperature: 0.7
